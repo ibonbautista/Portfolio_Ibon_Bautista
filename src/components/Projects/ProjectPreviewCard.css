@@ -1,0 +1,32 @@
+.project-preview-card {
+   cursor: pointer;
+   padding: 12px;
+   background-color: #fff;
+   border-radius: 12px;
+   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+   transition: transform 0.3s ease, box-shadow 0.3s ease;
+   text-align: center;
+   height: 100%;
+}
+
+.project-preview-card img {
+   width: 100%;
+   height: 120px;
+   object-fit: cover;
+   border-radius: 8px;
+}
+
+.project-preview-card h3 {
+   font-size: 1rem;
+   margin-top: 10px;
+   color: #333;
+}
+
+.project-preview-card:hover {
+   transform: translateY(-6px);
+   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+.project-preview-card.selected {
+   border: 2px solid #0077ff;
+}
