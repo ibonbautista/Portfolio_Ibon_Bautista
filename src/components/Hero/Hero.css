@@ -1,19 +1,16 @@
 .hero {
    position: relative;
    height: calc(100vh - 70px);
-   /* Ajuste por navbar */
    width: 100%;
-   background: url('../../../public/images/hero.jpg') center center / cover no-repeat;
+   background: url('/images/hero.jpg') center center / cover no-repeat;
    display: flex;
    align-items: center;
    justify-content: center;
    margin-top: 70px;
-   /* para empujar debajo del navbar */
 }
 
 .overlay {
-   background: rgba(0, 0, 0, 0.5);
-   /* Oscurece el fondo para contraste */
+   background: rgba(0, 0, 0, 0.6);
    width: 100%;
    height: 100%;
    display: flex;
@@ -22,20 +19,24 @@
 }
 
 .hero-content {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   text-align: center;
    max-width: 800px;
    padding: 40px;
-   background: rgba(255, 255, 255, 0.15);
+   background: rgba(0, 0, 0, 0.3);
    border-radius: 16px;
    backdrop-filter: blur(12px);
-   color: white;
-   text-align: center;
+   color: var(--text-color);
    animation: fadeIn 1s ease-in-out;
+   border: 2px solid var(--accent-color);
 }
 
 .hero-content h1 {
    font-size: 3rem;
    margin-bottom: 0.5rem;
-   letter-spacing: 2px;
+   color: var(--accent-color);
 }
 
 .subtitle {
@@ -50,22 +51,25 @@
    margin-bottom: 2rem;
 }
 
-.scroll-button {
+.scroll-link a {
    display: inline-block;
    padding: 10px 20px;
-   border: 1px solid white;
+   margin-top: 1rem;
+   border: 2px solid var(--accent-color);
    border-radius: 30px;
+   background: transparent;
+   color: var(--accent-color);
+   font-weight: 600;
+   font-size: 1rem;
    text-decoration: none;
-   color: white;
+   cursor: pointer;
    transition: all 0.3s ease;
 }
 
-.scroll-button:hover {
-   background: white;
-   color: black;
-}
+.scroll-link a:hover {
+   background: var(--accent-color);
+   color: var(--bg-color);}
 
-/* Fade-in animación */
 @keyframes fadeIn {
    from {
       opacity: 0;
@@ -75,20 +79,5 @@
    to {
       opacity: 1;
       transform: translateY(0);
-   }
-}
-
-/* RESPONSIVE */
-@media screen and (max-width: 768px) {
-   .hero-content h1 {
-      font-size: 2.2rem;
-   }
-
-   .subtitle {
-      font-size: 1rem;
-   }
-
-   .about {
-      font-size: 0.95rem;
    }
 }

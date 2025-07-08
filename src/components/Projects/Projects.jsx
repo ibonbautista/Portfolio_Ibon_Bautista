@@ -1,22 +1,22 @@
-import { useState } from 'react';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation } from 'swiper/modules';
+import { useState } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation } from "swiper/modules";
 
-import 'swiper/css';
-import 'swiper/css/navigation';
+import "swiper/css";
+import "swiper/css/navigation";
 
-import projects from '../../data/projects';
-import ProjectPreviewCard from './ProjectPreviewCard';
-import ProjectDetail from './ProjectDetail';
-import './Projects.css';
+import projects from "../../data/projects";
+import ProjectPreviewCard from "./ProjectPreviewCard";
+import ProjectDetail from "./ProjectDetail";
+import "./Projects.css";
 
 export default function Projects() {
   const [selectedIndex, setSelectedIndex] = useState(0);
 
   return (
     <section id="projects" className="projects-section">
-      <h2>Proyectos</h2>
-
+      <br />
+      <br />
       {/* Mini carrusel de previews */}
       <Swiper
         modules={[Navigation]}

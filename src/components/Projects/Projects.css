@@ -1,18 +1,15 @@
 .projects-section {
    max-width: 1200px;
    margin: auto;
-   padding: 2rem 1rem;
-}
-.projects-section {
    padding: 60px 20px;
-   background-color: #f7f9fb;
+   background-color: var(--section-bg, #f7f9fb);
 }
 
 .projects-section h2 {
    text-align: center;
    font-size: 2.4rem;
    margin-bottom: 40px;
-   color: #111;
+   color: var(--text-color, #111);
 }
 
 .project-swiper {
@@ -39,13 +36,12 @@
 
 .project-carousel-preview::-webkit-scrollbar {
    display: none;
-   /* Chrome y otros WebKit */
+   /* Chrome y WebKit */
 }
 
-/* Ajusta el tamaño de las cards para mostrar 5 a la vez en desktop */
+/* Cards en fila (desktop: 5 visibles) */
 .project-carousel-preview>* {
    flex: 0 0 calc(20% - 1rem);
-   /* 5 en fila */
    min-width: 180px;
    cursor: pointer;
    transition: transform 0.3s ease;
@@ -83,24 +79,24 @@
    right: 0;
 }
 
-/* Responsive */
+/* 🔄 Responsive */
 @media (max-width: 1024px) {
    .project-carousel-preview>* {
       flex: 0 0 calc(33.33% - 1rem);
-      /* 3 en tablet */
+      /* 3 por fila */
    }
 }
 
 @media (max-width: 768px) {
    .project-carousel-preview>* {
       flex: 0 0 calc(50% - 1rem);
-      /* 2 en móvil grande */
+      /* 2 por fila */
    }
 }
 
 @media (max-width: 480px) {
    .project-carousel-preview>* {
       flex: 0 0 100%;
-      /* 1 en móvil pequeño */
+      /* 1 por fila */
    }
 }

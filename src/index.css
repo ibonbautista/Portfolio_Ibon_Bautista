@@ -1,3 +1,53 @@
+:root {
+  /* Modo oscuro - por defecto */
+  --bg-color: #121212;
+  /* Negro suave */
+  --text-color: #e0e0e0;
+  /* Gris claro */
+  --accent-color: #e63946;
+  /* Rojo vibrante */
+  --secondary-accent: #2a9d8f;
+  /* Verde suave */
+  --card-bg: #1e1e1e;
+  /* Fondo tarjetas */
+  --border-color: #444;
+  /* Bordes sutiles */
+  --link-hover: #f77f81;
+  /* Rojo claro para hover enlaces */
+  --font-family: 'Poppins', sans-serif;
+  --overlay-bg: rgba(0, 0, 0, 0.6);
+    /* negro translúcido para modo oscuro */
+}
+
+[data-theme='light'] {
+  /* Modo claro */
+  --bg-color: #fafafa;
+  /* Gris muy claro */
+  --text-color: #111111;
+  /* Negro estándar */
+  --accent-color: #ff6b6b;
+  /* Rojo claro */
+  --secondary-accent: #6fcf97;
+  /* Verde claro */
+  --card-bg: #f0f0f0;
+  /* Fondo tarjetas claro */
+  --border-color: #ccc;
+  /* Bordes claros */
+  --link-hover: #ff9999;
+  /* Rojo más suave hover */
+  --overlay-bg: rgba(255, 255, 255, 0.4);
+    /* blanco translúcido para modo claro */
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: var(--font-family);
+  margin: 0;
+  padding: 0;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
 /* :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;

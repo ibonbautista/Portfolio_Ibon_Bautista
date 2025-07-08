@@ -1,4 +1,4 @@
-import './TechCategory.css';
+import "./TechCategory.css";
 
 export default function TechCategory({ category, technologies }) {
   return (
