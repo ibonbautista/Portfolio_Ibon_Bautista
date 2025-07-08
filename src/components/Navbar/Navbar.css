@@ -13,16 +13,17 @@
    align-items: center;
    transition: all 0.3s ease-in-out;
    color: var(--text-color);
+   padding: 0 20px; /* para evitar que el contenido toque los bordes */
 }
 
 .navbar-container {
    width: 100%;
    max-width: 1200px;
    margin: auto;
-   padding: 0 20px;
    display: flex;
    justify-content: space-between;
    align-items: center;
+   height: 100%; /* Para que tome toda la altura del navbar */
 }
 
 .logo {
@@ -40,6 +41,8 @@
    display: flex;
    gap: 30px;
    list-style: none;
+   align-items: center; /* centrar verticalmente los links */
+   height: 100%; /* toma toda la altura del navbar */
 }
 
 .navbar-links li a {

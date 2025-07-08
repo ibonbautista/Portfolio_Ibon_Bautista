@@ -8,11 +8,12 @@ export default function Navbar() {
   return (
     <nav className="navbar">
       <div className="navbar-container">
-        <div className="logo">IbonDev</div>
+        <div className="logo">Ibon Bautista</div>
 
         <ul className={`navbar-links ${menuOpen ? 'active' : ''}`}>
-          <li><a href="#projects" onClick={() => setMenuOpen(false)}>Proyectos</a></li>
           <li><a href="#experience" onClick={() => setMenuOpen(false)}>Experiencia</a></li>
+          <li><a href="#projects" onClick={() => setMenuOpen(false)}>Proyectos</a></li>
+          <li><a href="#technologies" onClick={() => setMenuOpen(false)}>Tecnologías</a></li>
           <li><a href="#contact" onClick={() => setMenuOpen(false)}>Contacto</a></li>
           <li><ThemeToggle /></li>
         </ul>
