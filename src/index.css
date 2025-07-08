@@ -1,18 +1,18 @@
 :root {
   /* Modo oscuro - por defecto */
-  --bg-color: #121212;
+  --bg-color: #000000;
   /* Negro suave */
   --text-color: #e0e0e0;
   /* Gris claro */
-  --accent-color: #e63946;
+  --accent-color: #e30404;
   /* Rojo vibrante */
-  --secondary-accent: #2a9d8f;
+  --secondary-accent: #0ec623;
   /* Verde suave */
   --card-bg: #1e1e1e;
   /* Fondo tarjetas */
   --border-color: #444;
   /* Bordes sutiles */
-  --link-hover: #f77f81;
+  --link-hover: #ef2a2e;
   /* Rojo claro para hover enlaces */
   --font-family: 'Poppins', sans-serif;
   --overlay-bg: rgba(0, 0, 0, 0.6);
@@ -21,19 +21,19 @@
 
 [data-theme='light'] {
   /* Modo claro */
-  --bg-color: #fafafa;
+  --bg-color: #d0d0d0;
   /* Gris muy claro */
-  --text-color: #111111;
+  --text-color: #000000;
   /* Negro estándar */
-  --accent-color: #ff6b6b;
+  --accent-color: #f62626;
   /* Rojo claro */
-  --secondary-accent: #6fcf97;
+  --secondary-accent: #028711;
   /* Verde claro */
   --card-bg: #f0f0f0;
   /* Fondo tarjetas claro */
   --border-color: #ccc;
   /* Bordes claros */
-  --link-hover: #ff9999;
+  --link-hover: #ef1010;
   /* Rojo más suave hover */
   --overlay-bg: rgba(255, 255, 255, 0.4);
     /* blanco translúcido para modo claro */
