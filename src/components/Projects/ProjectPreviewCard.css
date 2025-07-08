@@ -1,32 +1,116 @@
 .project-preview-card {
-   cursor: pointer;
-   padding: 12px;
-   background-color: #fff;
+   width: 100%;
+   max-width: 400px;
+   height: 400px;
+   background-color: var(--card-bg);
+   border: 1px solid var(--border-color);
    border-radius: 12px;
-   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
-   transition: transform 0.3s ease, box-shadow 0.3s ease;
+   padding: 1rem;
    text-align: center;
-   height: 100%;
+   transition: transform 0.3s ease, border 0.3s ease;
+   cursor: pointer;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   align-items: center;
+   box-sizing: border-box;
+}
+
+.project-preview-card.selected {
+   border: 2px solid var(--accent-color);
+   transform: scale(1.02);
+}
+
+.project-preview-card h3 {
+   height: 5rem;
+   line-height: 1.5rem;
+   margin: 0.5rem 0;
+   color: var(--secondary-accent);
+   font-size: 1.5rem;
+   overflow: hidden;
+   display: -webkit-box;
+   -webkit-line-clamp: 2;
+   -webkit-box-orient: vertical;
+   white-space: normal;
+   text-overflow: ellipsis;
 }
 
 .project-preview-card img {
    width: 100%;
-   height: 120px;
-   object-fit: cover;
+   height: 200px;
    border-radius: 8px;
+   margin: 1rem 0;
+   object-fit: cover;
 }
 
-.project-preview-card h3 {
+.project-preview-card p {
+   height: 100px;
+   overflow: hidden;
+   text-overflow: ellipsis;
    font-size: 1rem;
-   margin-top: 10px;
-   color: #333;
+   color: var(--text-color);
+   margin-bottom: 1rem;
+   padding: 0 1rem;
 }
 
-.project-preview-card:hover {
-   transform: translateY(-6px);
-   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+.project-buttons {
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
+   gap: 1rem;
 }
 
-.project-preview-card.selected {
-   border: 2px solid #0077ff;
+.project-btn {
+   background-color: var(--accent-color);
+   color: var(--bg-color);
+   padding: 0.6rem 1.2rem;
+   border-radius: 20px;
+   text-decoration: none;
+   font-weight: 600;
+   font-size: 1rem;
+   transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.project-btn:hover {
+   background-color: var(--link-hover);
+}
+
+/* 📱 Responsive */
+@media (max-width: 768px) {
+   .project-preview-card {
+      width: 90%;
+      height: auto;
+      padding: 0.8rem;
+   }
+
+   .project-preview-card h3 {
+      font-size: 1.3rem;
+   }
+
+   .project-preview-card img {
+      max-width: 100%;
+      height: auto;
+   }
+
+   .project-preview-card p {
+      font-size: 0.95rem;
+      height: auto;
+   }
+
+   .project-btn {
+      padding: 0.5rem 1rem;
+      font-size: 0.9rem;
+   }
+}
+
+@media (max-width: 480px) {
+   .project-buttons {
+      flex-direction: column;
+      gap: 0.75rem;
+   }
+
+   .project-btn {
+      width: 100%;
+      text-align: center;
+   }
 }

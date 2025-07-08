@@ -4,13 +4,15 @@
    top: 0;
    width: 100%;
    height: 70px;
-   background: rgba(255, 255, 255, 0.8);
+   background: rgba(0, 0, 0, 0.8);
+   /* fondo oscuro translúcido por defecto */
    backdrop-filter: blur(12px);
-   box-shadow: 0 1px 10px rgba(0, 0, 0, 0.08);
+   box-shadow: 0 1px 10px rgba(0, 0, 0, 0.7);
    z-index: 9999;
    display: flex;
    align-items: center;
    transition: all 0.3s ease-in-out;
+   color: var(--text-color);
 }
 
 .navbar-container {
@@ -27,8 +29,10 @@
    font-family: 'Courier New', monospace;
    font-size: 1.6rem;
    font-weight: bold;
-   color: #111;
+   color: var(--accent-color);
+   /* usa el color de acento, rojo o verde según tema */
    letter-spacing: 1px;
+   cursor: default;
 }
 
 /* LINKS */
@@ -39,9 +43,9 @@
 }
 
 .navbar-links li a {
-   color: #222;
+   color: var(--text-color);
    text-decoration: none;
-   font-weight: 500;
+   font-weight: 600;
    font-size: 1rem;
    position: relative;
    transition: all 0.2s ease;
@@ -54,7 +58,7 @@
    height: 2px;
    left: 0;
    bottom: -4px;
-   background: #111;
+   background: var(--accent-color);
    transition: width 0.3s ease;
 }
 
@@ -75,7 +79,7 @@
 .hamburger span {
    display: block;
    height: 3px;
-   background: #222;
+   background: var(--text-color);
    border-radius: 10px;
    transition: all 0.3s ease;
 }
@@ -104,13 +108,13 @@
       top: 70px;
       left: 0;
       right: 0;
-      background: white;
+      background: var(--card-bg);
       flex-direction: column;
       align-items: center;
       gap: 20px;
       padding: 30px 0;
       display: none;
-      border-top: 1px solid #eee;
+      border-top: 1px solid var(--accent-color);
    }
 
    .navbar-links.active {
