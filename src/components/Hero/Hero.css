@@ -27,37 +27,44 @@
    padding: 40px;
    background: rgba(0, 0, 0, 0.3);
    border-radius: 16px;
-   backdrop-filter: blur(12px);
+   backdrop-filter: blur(30px);
    color: var(--text-color);
    animation: fadeIn 1s ease-in-out;
    border: 2px solid var(--accent-color);
 }
 
 .hero-content h1 {
-   font-size: 3rem;
+   font-size: 3.6rem;
    margin-bottom: 0.5rem;
    color: var(--accent-color);
 }
 
 .subtitle {
-   font-size: 1.2rem;
-   margin-bottom: 1rem;
-   font-weight: 300;
+   font-size: 1.6rem;
+   margin-bottom: 1.5rem;
+   font-weight: 1000;
+   color: var(--acent-color);
 }
 
 .about {
-   font-size: 1rem;
-   line-height: 1.6;
+   font-size: 1.2rem;
+   line-height: 1.5;
    margin-bottom: 2rem;
+   color: var(--text-color);
 }
 
-.scroll-link a {
+.scroll-links {
+   display: flex;
+   gap: 1.5rem;
+   justify-content: center;
+}
+
+.scroll-links a {
+   background-color: var(--bg-color);
    display: inline-block;
-   padding: 10px 20px;
-   margin-top: 1rem;
+   padding: 10px 24px;
    border: 2px solid var(--accent-color);
    border-radius: 30px;
-   background: transparent;
    color: var(--accent-color);
    font-weight: 600;
    font-size: 1rem;
@@ -66,9 +73,13 @@
    transition: all 0.3s ease;
 }
 
-.scroll-link a:hover {
+.scroll-links a:hover,
+.scroll-links a:focus {
    background: var(--accent-color);
-   color: var(--bg-color);}
+   color: var(--bg-color);
+   border: 3px solid var(--bg-color);
+   outline: none;
+}
 
 @keyframes fadeIn {
    from {
