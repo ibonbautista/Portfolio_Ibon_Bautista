@@ -1,8 +1,27 @@
+import { useEffect, useState } from "react";
 import "./TechCategory.css";
 
-export default function TechCategory({ category, technologies }) {
+export default function TechCategory({ category, technologies, isVisible }) {
+  const [show, setShow] = useState(true);
+  const [animatingOut, setAnimatingOut] = useState(false);
+
+  useEffect(() => {
+  if (!isVisible) {
+    setAnimatingOut(true);
+    setTimeout(() => {
+      setShow(false);
+      setAnimatingOut(false);
+    }, 400); // Igual que en el CSS
+  } else {
+    setShow(true);
+  }
+}, [isVisible]);
+
+
+  if (!show && !animatingOut) return null;
+
   return (
-    <div className="tech-category">
+    <div className={`tech-category ${animatingOut ? "slide-up" : "slide-down"}`} key={category}>
       <div className="icons-row">
         {technologies.map((tech) => (
           <img
