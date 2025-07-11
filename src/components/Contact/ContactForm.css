@@ -1,0 +1,189 @@
+/* Form Container */
+.contact-form {
+  flex: 1;
+  min-width: 700px;
+  background: var(--bg-color);
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.1);
+  border-left: 6px solid var(--secondary-accent);
+  padding-left: 2rem;
+}
+
+.contact-form p {
+  margin-bottom: 1.8rem;
+  color: var(--text-color);
+  font-size: 1.5rem;
+  text-align: justify;
+  line-height: 1.5;
+}
+
+/* EmailJS Form */
+.contact-form-emailjs {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  background-color: var(--bg-color);
+  padding: 2.5rem;
+  border-radius: 14px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+  transition: box-shadow 0.3s ease;
+}
+
+.contact-form-emailjs:hover {
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.contact-form-emailjs label {
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+/* Fila 1: Nombre + Email */
+.input-row {
+  display: flex;
+  gap: 1.2rem;
+  flex-wrap: wrap;
+}
+
+/* Grupos de inputs */
+.input-group {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  font-size: large;
+  gap: 0.5rem;
+}
+
+.name-group {
+  flex: 0.6;
+  width: 45%;
+}
+
+.email-group {
+  flex: 1;
+  width: 55%;
+}
+
+/* Fila 2: Mensaje ocupa toda la fila */
+.input-group.full-width {
+  width: 100%;
+}
+
+/* Inputs y textarea */
+.contact-form-emailjs input,
+.contact-form-emailjs textarea {
+  padding: 0.85rem 1rem;
+  font-size: 1.05rem;
+  border-radius: 10px;
+  border: 1.5px solid var(--border-color);
+  resize: vertical;
+  font-family: inherit;
+  background-color: var(--card-bg);
+  color: var(--text-color);
+  transition: border-color 0.3s ease;
+}
+
+.contact-form-emailjs input:focus,
+.contact-form-emailjs textarea:focus {
+  border-color: var(--secondary-accent);
+  outline: none;
+}
+
+/* Fila 3: Botón + mensajes */
+.form-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: row;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.contact-form-emailjs button {
+  align-self: flex-end;
+  padding: 0.85rem 1rem;
+  margin-left: auto;
+  background-color: var(--secondary-accent);
+  color: var(--bg-color);
+  border: none;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 1.3rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.15s ease;
+}
+
+.contact-form-emailjs button:hover {
+  background-color: var(--accent-color);
+  transform: scale(1.03);
+}
+
+.spinner {
+  width: 1.2rem;
+  height: 1.2rem;
+  border: 3px solid transparent;
+  border-top: 3px solid var(--bg-color);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+button[disabled] {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* Mensajes de estado */
+.success-msg {
+  color: #00c714;
+  font-weight: 700;
+  font-size: 1.5rem;
+  flex: 1;
+  margin: 0;
+  text-align: left;
+}
+
+.error-msg {
+  color: #d60404;
+  font-weight: 700;
+  font-size: 1.5rem;
+  flex: 1;
+  margin: 0;
+  text-align: left;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .contact-form {
+    border-left: none;
+    border-top: 3px solid var(--secondary-accent);
+    padding-top: 2rem;
+  }
+
+  .input-row {
+    flex-direction: column;
+  }
+
+  .name-group,
+  .email-group {
+    flex: 1;
+  }
+
+  .contact-form-emailjs button {
+    width: 100%;
+    text-align: center;
+  }
+
+  .form-footer {
+    align-items: center;
+  }
+}

@@ -1,160 +1,184 @@
 /* Contact Section */
 .contact-section {
-   padding: 4rem 2rem;
-   background: #f9f9f9;
-   display: flex;
-   justify-content: center;
-   align-items: center;
+  min-height: calc(100vh - 80px); /* Ajuste para navbar fijo de 80px */
+  padding-top: 4.5rem;
+  padding-bottom: 4rem;
+  background-color: var(--card-bg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
 }
 
 /* Container */
 .contact-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  max-width: 80%;
+  width: 100%;
+  padding: 0 2rem;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+/* Contact Columns */
+.contact-columns {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 5rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Each Column */
+.contact-info{
+  flex: 1;
+  min-width: 280px;
+  max-width: 40%;
+  box-sizing: border-box;
    display: flex;
-   flex-wrap: wrap;
-   gap: 3rem;
-   max-width: 1200px;
-   width: 100%;
-   justify-content: space-between;
-   align-items: flex-start;
+  flex-direction: column;
+}
+.contact-form {
+  flex: 1;
+  min-width: 280px;
+  max-width: 60%;
+  box-sizing: border-box;
 }
 
 /* Left: Info */
-.contact-info {
-   flex: 1;
-   min-width: 300px;
-   color: #333;
+.contact-info .main-contact-title {
+  font-size: 2rem;
+  margin-bottom: 2.5rem;
+  margin-top: 2rem;
+  text-align: left;
+  color: white;
+  text-align: justify;
 }
 
-.contact-info h2 {
-   font-size: 2.2rem;
-   margin-bottom: 1.2rem;
-   color: #0077b6;
-   font-weight: 700;
-   letter-spacing: 0.05em;
-}
-
-.contact-info ul {
-   list-style: none;
-   padding: 0;
-   margin-top: 1rem;
-}
-
-.contact-info li {
-   margin-bottom: 1.2rem;
-   font-size: 1.1rem;
-   line-height: 1.5;
-}
-
-.contact-info a {
-   color: #0077b6;
-   text-decoration: none;
-   transition: color 0.3s ease;
-}
-
-.contact-info a:hover {
-   text-decoration: underline;
-   color: #023e8a;
-}
-
-/* Right: Form */
-.contact-form {
-   flex: 1;
-   min-width: 300px;
-}
-
-.contact-form h2 {
-   font-size: 2rem;
-   margin-bottom: 0.8rem;
-   color: #0077b6;
-   font-weight: 700;
-}
-
-.contact-form p {
-   margin-bottom: 1.8rem;
-   color: #555;
-   font-size: 1rem;
-   line-height: 1.5;
-}
-
-/* EmailJS Form */
-.contact-form-emailjs {
+/* Contact List */
+.contact-list {
    display: flex;
    flex-direction: column;
-   gap: 1.25rem;
-   background: #fff;
-   padding: 2.5rem;
-   border-radius: 14px;
-   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
-   transition: box-shadow 0.3s ease;
+   align-items: center;
+   justify-content: center;
+   margin-top: 1.5rem;
+   padding: 0;
+  list-style: none;
+  gap: 1rem;
 }
 
-.contact-form-emailjs:hover {
-   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+/* Contact Item */
+.contact-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 2rem;
+  margin-left: 0;
+  border-radius: 12px;
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: var(--text-color);
+  background-color: var(--bg-color);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  border-left: 6px solid var(--secondary-accent);
+  transition: transform 0.2s ease, background-position 0.6s ease;
+  height: 48px;
+  width: 240px;
 }
 
-.contact-form-emailjs label {
-   font-weight: 600;
-   color: #333;
+.contact-item:hover {
+  background-color: var(--card-bg);
+  transform: translateY(-2px);
 }
 
-.contact-form-emailjs input,
-.contact-form-emailjs textarea {
-   padding: 0.85rem 1rem;
-   font-size: 1.05rem;
-   border-radius: 10px;
-   border: 1.5px solid #ccc;
-   resize: vertical;
-   font-family: inherit;
-   transition: border-color 0.3s ease;
+.contact-item a {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 600;
 }
 
-.contact-form-emailjs input:focus,
-.contact-form-emailjs textarea:focus {
-   border-color: #0077b6;
-   outline: none;
+/* Icon inside contact item */
+.contact-item .icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  width: 24px;
+  height: 24px;
+  color: inherit;
 }
 
-.contact-form-emailjs button {
-   padding: 0.85rem 1rem;
-   background-color: #0077b6;
-   color: white;
-   border: none;
-   border-radius: 10px;
-   font-weight: 700;
-   font-size: 1.1rem;
-   cursor: pointer;
-   transition: background-color 0.3s ease, transform 0.15s ease;
+/* Brand Styles */
+.contact-item.gmail {
+  background: linear-gradient(to right, #000000, #900303);
+  border-left-color: #900303;
+  color: #ffffff;
 }
 
-.contact-form-emailjs button:hover {
-   background-color: #023e8a;
-   transform: scale(1.03);
+.contact-item.linkedin {
+  background: linear-gradient(to right, #000000, #005a8a);
+  border-left-color: #005a8a;
+  color: #ffffff;
 }
 
-/* Status Messages */
-.success-msg {
-   color: #28a745;
-   font-weight: 700;
-   margin-top: 0.5rem;
-}
-
-.error-msg {
-   color: #dc3545;
-   font-weight: 700;
-   margin-top: 0.5rem;
+.contact-item.whatsapp {
+  background: linear-gradient(to right, #000000, #079f04);
+  border-left-color: #079f04;
+  color: #ffffff;
 }
 
 /* Responsive */
-@media (max-width: 768px) {
-   .contact-container {
-      flex-direction: column;
-      align-items: center;
-      padding: 0 1rem;
-   }
+@media (max-width: 1024px) {
+  .contact-info .main-contact-title {
+    font-size: 2rem;
+  }
 
-   .contact-info,
-   .contact-form {
-      width: 100%;
-      max-width: 500px;
-   }
+  .contact-item {
+    font-size: 1.3rem;
+    height: 46px;
+    width: 220px;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-container {
+    padding: 0 1rem;
+  }
+
+  .contact-columns {
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+  }
+
+  .contact-info,
+  .contact-form {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .contact-item {
+    margin-left: 0;
+    width: 100%;
+    max-width: 100%;
+    justify-content: flex-start;
+  }
+
+  .contact-info .main-contact-title {
+    text-align: center;
+    margin-left: 0;
+    font-size: 1.8rem;
+  }
+
+  .contact-list {
+    align-items: center;
+    width: 100%;
+  }
 }
