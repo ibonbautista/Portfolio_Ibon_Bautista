@@ -1,0 +1,9 @@
+.projects-section {
+  height: calc(100vh - 3.75rem); 
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+  padding: 1rem;
+  box-sizing: border-box;
+  background-color: var(--bg-color);
+}
