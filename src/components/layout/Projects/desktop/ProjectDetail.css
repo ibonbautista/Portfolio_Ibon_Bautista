@@ -1,0 +1,224 @@
+.modal-overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(15, 23, 42, 0.75);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  animation: fadeInOverlay 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  backdrop-filter: blur(6px);
+}
+
+@keyframes fadeInOverlay {
+  from { opacity: 0; backdrop-filter: blur(0); }
+  to { opacity: 1; backdrop-filter: blur(6px); }
+}
+
+.modal-container {
+  width: 85vw;
+  max-width: 1100px;
+  max-height: 85vh;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding: 28px 32px;
+  overflow: hidden;
+  animation: scaleInModal 0.25s ease forwards;
+  font-family: 'Inter', sans-serif;
+  color: #1e293b;
+}
+
+@keyframes scaleInModal {
+  from {
+    opacity: 0;
+    transform: scale(0.85);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.25);
+  }
+}
+@keyframes scaleOutModal {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0.85);
+  }
+}
+
+.modal-close-btn {
+  position: absolute;
+  top: 18px;
+  right: 22px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s ease;
+  color: #64748b;
+}
+
+.modal-close-btn:hover,
+.modal-close-btn:focus {
+  color: #2563eb;
+  outline: none;
+}
+
+.modal-close-btn svg {
+  width: 20px;
+  height: 20px;
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.modal-content {
+  flex: 1;
+  display: flex;
+  gap: 28px;
+  overflow: hidden;
+}
+
+.modal-column {
+  overflow-y: auto;
+  padding-right: 12px;
+  scrollbar-width: thin;
+  scrollbar-color: #cbd5e1 transparent;
+}
+
+/* Scrollbar custom para webkit */
+.modal-column::-webkit-scrollbar {
+  width: 6px;
+}
+
+.modal-column::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.modal-column::-webkit-scrollbar-thumb {
+  background-color: #cbd5e1;
+  border-radius: 10px;
+}
+
+.modal-info {
+  flex: 3;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.modal-info h2 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+  font-size: 1.9rem;
+  color: #111827;
+  letter-spacing: 0.02em;
+}
+
+.modal-tech {
+  flex: 2;
+  border-left: 1px solid #e2e8f0;
+  border-right: 1px solid #e2e8f0;
+}
+
+.modal-tech h3 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  font-size: 1.3rem;
+  color: #334155;
+}
+
+.tech-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 24px 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tech-list li {
+  background: #eff6ff;
+  color: #2563eb;
+  margin: 0;
+  padding: 8px 14px;
+  border-radius: 12px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  user-select: none;
+  box-shadow: 0 2px 6px rgba(37, 99, 235, 0.3);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.tech-list li:hover {
+  background-color: #2563eb;
+  color: #e0e7ff;
+  box-shadow: 0 4px 10px rgba(37, 99, 235, 0.6);
+}
+
+.modal-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.btn {
+  padding: 12px 22px;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  border: none;
+  text-align: center;
+  text-decoration: none;
+  color: #2563eb;
+  background-color: #e0e7ff;
+  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.3);
+  transition: all 0.3s ease;
+  user-select: none;
+}
+
+.btn:hover,
+.btn:focus {
+  background-color: #2563eb;
+  color: #fff;
+  box-shadow: 0 6px 20px rgba(37, 99, 235, 0.6);
+  outline: none;
+}
+
+.modal-media {
+  flex: 3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.media-video, .media-image {
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 14px;
+  box-shadow: 0 0 25px rgba(37, 99, 235, 0.4);
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.media-video:hover, .media-image:hover {
+  transform: scale(1.03);
+}

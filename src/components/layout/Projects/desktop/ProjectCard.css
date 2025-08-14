@@ -1,0 +1,101 @@
+.project-card {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.project-card:hover {
+  background-color: rgba(255, 255, 255, 0.02);
+  border-color: rgba(255, 255, 255, 0.2);
+  transform: scale(1.01);
+}
+.project-card:focus {
+  outline: 2px solid var(--color-primary, #facc15);
+  outline-offset: 4px;
+}
+
+.card-overlay {
+  width: 100%;
+  height: 100%;
+   background: linear-gradient(to top, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.15));
+  display: flex;
+  align-items: flex-end;
+  padding: 1.2rem;
+  box-sizing: border-box;
+  transition: opacity 0.35s ease;
+}
+.project-card:hover .card-overlay {
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.1));
+}
+.card-content {
+  color: white;
+  width: 100%;
+}
+
+.card-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin: 0 0 0.3rem 0;
+}
+
+.card-description {
+  font-size: 1rem;
+  margin-bottom: 0.8rem;
+  color: #ccc;
+}
+
+.card-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1rem 0;
+}
+
+.card-tech li {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 0.3rem 0.6rem;
+  font-size: 0.75rem;
+  border-radius: 0.4rem;
+  color: #fff;
+  font-weight: 500;
+  backdrop-filter: blur(3px);
+}
+
+.card-buttons {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 0.4rem 0.9rem;
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
+  font-size: 0.8rem;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 0.4rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+  color: black;
+}
+
+.btn-more {
+  background: var(--color-primary, #facc15);
+  color: black;
+  font-weight: 600;
+}
+
+.btn-more:hover {
+  background: var(--color-primary-hover, #fef08a);
+}
