@@ -1,0 +1,200 @@
+.projects-grid {
+   width: 90vw;
+  margin: 2rem auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 1.2rem;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow:
+    0 4px 30px rgba(0, 0, 0, 0.2),
+    inset 0 0 20px rgba(255, 255, 255, 0.05);
+  overflow: hidden;
+  position: relative;
+}
+/* Efecto foco: oscurecer el resto */
+.projects-grid:hover .project-card {
+  filter: brightness(0.55) blur(1.3px);
+  transform: scale(1);
+  transition: filter 0.3s ease-in-out;
+}
+.projects-grid:hover .project-card:hover {
+  filter: brightness(1) blur(0);
+  transform: scale(1.01);
+  z-index: 2;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+}
+
+.empty-slot {
+  position: relative;
+  background: rgba(0,0,0,0.4);
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: default;
+}
+
+/* Fondo animado con partículas muy sutil */
+.empty-slot::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle, rgba(255,255,255,0.05) 1px, transparent 1px);
+  background-size: 5px 5px;
+  animation: particleMove 10s linear infinite;
+  opacity: 0.15;
+  pointer-events: none;
+  border-radius: inherit;
+}
+
+/* Borde animado tipo escaneo, lento y muy tenue */
+.empty-slot::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  border: 2px solid transparent;
+  background: linear-gradient(90deg, transparent, var(--color-secondary), transparent);
+  background-size: 200% 100%;
+  animation: borderScan 15s linear infinite;
+  opacity: 0.25;
+  pointer-events: none;
+}
+
+/* Texto teaser */
+.empty-slot span {
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: rgba(255,255,255,0.7);
+  text-transform: uppercase;
+  z-index: 1;
+  user-select: none;
+}
+
+/* Animaciones */
+@keyframes particleMove {
+  0% { background-position: 0 0; }
+  100% { background-position: 100px 100px; }
+}
+
+@keyframes borderScan {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.more-projects {
+  background-color: #292929;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 16 / 10;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.4s ease, box-shadow 0.4s ease;
+  cursor: pointer;
+}
+
+/* Fondo partículas sutiles */
+.more-projects::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle, rgba(255,255,255,0.08) 1px, transparent 1px);
+  background-size: 6px 6px;
+  animation: particleMove 40s linear infinite;
+  opacity: 0.15;
+  pointer-events: none;
+  border-radius: inherit;
+  z-index: 0;
+}
+
+/* Borde brillante animado */
+.more-projects::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  background: linear-gradient(270deg, transparent, #fff647, #aa9705, #edff47, transparent);
+  background-size: 600% 600%;
+  animation: borderGlow 7s ease infinite;
+  opacity: 0.35;
+  mix-blend-mode: screen;
+  z-index: 1;
+}
+
+/* Hover explota con glow dorado */
+.more-projects:hover {
+  background: rgba(255, 255, 255, 0.12);
+  transform: scale(1.06);
+  box-shadow:
+    0 0 12px 4px #fff647,
+    0 0 20px 6px #aa9705;
+  border-color: var(--color-secondary);
+  transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  z-index: 10;
+}
+
+.more-projects-info {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.more-projects-total {
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 0.3rem;
+  opacity: 0.8;
+  color: #fff;
+  text-shadow: 0 0 4px rgba(255, 182, 74, 0.7);
+}
+
+.more-projects-text {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #ffb347;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 0 0 6px #ff9e1b;
+}
+
+.more-projects-icon {
+  font-size: 1.6rem;
+  margin-top: 0.6rem;
+  opacity: 0.9;
+  color: #ff8c00;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  filter: drop-shadow(0 0 3px #ff8c00);
+  z-index: 2;
+}
+
+.more-projects:hover .more-projects-icon {
+  animation: bounce 0.6s ease forwards;
+}
+
+/* Animaciones */
+@keyframes particleMove {
+  0% { background-position: 0 0; }
+  100% { background-position: 120px 120px; }
+}
+
+@keyframes borderGlow {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+@keyframes bounce {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-6px); }
+  100% { transform: translateY(0); }
+}

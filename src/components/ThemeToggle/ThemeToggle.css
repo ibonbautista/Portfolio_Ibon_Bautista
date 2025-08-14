@@ -4,7 +4,7 @@
   height: 30px;
   background: var(--toggle-bg, #ccc);
   border-radius: 30px;
-  border: 1px solid var(--accent-color, #ddd);
+  border: 1px solid var(--color-primary, #ddd);
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -42,7 +42,7 @@
   left: 3px;
   width: 24px;
   height: 24px;
-  background: var(--accent-color, #ffcc00);
+  background: var(--color-primary, #ffcc00);
   border-radius: 50%;
   box-shadow: 0 2px 5px rgba(0,0,0,0.2);
   transition: left 0.3s ease, background-color 0.3s ease;
@@ -51,7 +51,7 @@
 /* Cuando está oscuro, mueve la bolita a la derecha y cambia color */
 .theme-toggle-btn.dark .toggle-ball {
   left: calc(100% - 27px);
-  background: var(--accent-color-dark, #555);
+  background: var(--color-primary-dark, #555);
 }
 
 /* Cambia el color de iconos según el tema */
@@ -66,5 +66,5 @@
 /* Opcional: cambia fondo y borde cuando está oscuro */
 .theme-toggle-btn.dark {
   background: var(--toggle-bg-dark, #444);
-  border-color: var(--accent-color-dark, #666);
+  border-color: var(--color-primary-dark, #666);
 }

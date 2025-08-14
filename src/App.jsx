@@ -1,24 +1,25 @@
-import Navbar from './components/Navbar/Navbar.jsx';
-import Hero from './components/Hero/Hero.jsx';
-import Technologies from './components/Technologies/Technologies.jsx';
-import Projects from './components/Projects/Projects.jsx';
-import Contact from './components/Contact/Contact.jsx';
-import ScrollToTop from './components/ScrollToTop/ScrollToTop.jsx';
+import Navbar from "./components/layout/Navbar/Navbar.jsx";
+import Hero from "./components/layout/Hero/Hero.jsx";
+import ExpSection from "./components/layout/Experience/ExpSection.jsx";
+import Projects from "./components/layout/Projects/ProjectsSection.jsx";
+import Technologies from "./components/layout/Technologies/Technologies.jsx";
+import Contact from "./components/layout/Contact/Contact.jsx";
+import ScrollToTop from "./components/ScrollToTop/ScrollToTop.jsx";
 
-import './App.css'
+import "./App.css";
 
 function App() {
-
   return (
     <>
-     <Navbar />
+      <Navbar />
       <Hero />
+      <ExpSection />
       <Projects />
       <Technologies />
       <Contact />
       <ScrollToTop />
     </>
-  )
+  );
 }
 
-export default App
+export default App;

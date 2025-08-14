@@ -1,0 +1,170 @@
+/* Contenedor general */
+.horizontal-carousel {
+  position: relative;
+  width: 98vw;          /* ocupa todo el ancho del viewport */
+  max-width: 98vw;      /* evitar que se pase del viewport */
+  height: 95vh;         /* ocupa todo el alto del viewport */
+  max-height: 95vh;     /* evitar que se pase del viewport */
+  box-sizing: border-box;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;         /* un poco de padding para que no pegue a bordes */
+  overflow-x: hidden;
+}
+
+/* Vista del carrusel */
+.carousel-viewport {
+  overflow: hidden;
+  width: 100%;
+  height: 70%;
+  box-sizing: border-box;
+  padding: 0;
+}
+
+/* Track con las slides */
+.carousel-track {
+  display: flex;
+  gap: 1rem;
+  padding: 0 0.5rem;
+  transition: transform 0.5s ease-in-out;
+  height: 100%;
+}
+
+/* Cada slide */
+.carousel-slide {
+  flex: 0 0 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  box-sizing: border-box;
+  align-items: center;
+  background-color: transparent;
+  backdrop-filter: blur(8px);
+  overflow: hidden;
+  gap: .5rem;
+  position: relative;
+}
+
+/* Cada ProjectCard dentro de slide ocupa la mitad */
+.carousel-slide > * {
+  flex: 1 1 50%;
+  min-height: 0;
+}
+
+/* Placeholder para tarjetas vacías */
+.carousel-card-placeholder {
+  flex: 1 1 50%;
+  min-height: 0;
+  pointer-events: none;
+  visibility: hidden;
+}
+
+/* Controles debajo */
+.carousel-controls {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 100%;
+  padding: 0.1rem 0;
+  box-sizing: border-box;
+  gap: 0.5rem;
+  flex-wrap: nowrap;
+  margin-top: .5rem;
+}
+
+/* Botones */
+.carousel-btn {
+  width: 49px;
+  height: 49px;
+  border: 3px solid var(--color-secondary);
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  font-size: 1.4rem;
+  font-weight: bold;
+  background: transparent;
+  backdrop-filter: blur(8px);
+  padding: 0.5rem;
+  color: var(--color-text);
+  transition: background 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.carousel-btn:disabled {
+  opacity: 0.2;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.carousel-btn:hover:not(:disabled),
+.carousel-btn:focus-visible {
+  background: var(--color-primary-light); /* color más suave que el original */
+  color: var(--color-primary-dark);
+  box-shadow: 0 0 8px var(--color-primary-light);
+}
+
+.carousel-btn:active {
+  background: rgba(255, 238, 0, 0.193); /* cambio breve al hacer click */
+  color: white;
+  box-shadow: 0 0 10px var(--color-primary);
+}
+
+.carousel-btn.left {
+  position: absolute;
+  left: 20%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.carousel-btn.right {
+  position: absolute;
+  right: 20%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+/* Dots */
+.carousel-dots {
+  display: flex;
+  gap: 0.3rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 80px;
+  margin: 0 auto;
+  row-gap: 0.3rem;
+}
+
+.carousel-dot {
+  width: 14px;
+  height: 14px;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border: none;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  cursor: pointer;
+}
+
+.carousel-dot.active {
+  background-color: var(--color-secondary);
+  transform: scale(1.2);
+  box-shadow: 0 0 6px var(--color-primary);
+}
+
+.carousel-dot:hover,
+.carousel-dot:focus-visible {
+  background-color: var(--color-primary-hover);
+  transform: scale(1.1);
+}
+
+@media (min-width: 600px) and (max-width: 900px) {
+  .horizontal-carousel {
+    max-width: 620px;  /* menor ancho para tablets */
+    width: 100%;        /* ocupa el 90% del contenedor padre */
+  }
+}
